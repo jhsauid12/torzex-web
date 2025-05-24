@@ -1,0 +1,11 @@
+﻿{
+    {
+        "title": "ScriptDocs",
+        "introText": "Подробные инструкции по запуску Python-скриптов в Pydroid3, Visual Studio Code, командной строке, терминале и других средах. Упростим сложное и ускорим твой старт в программировании!",
+        "searchPlaceholder": "Поиск по инструкциям...",
+        "langButton": "Язык",
+        "filesSectionTitle": "Файлы на сайте",
+        "filterNew": "Новое",
+        "filterPopular": "Популярное",
+        "filterPaid": "Платное"
+    }

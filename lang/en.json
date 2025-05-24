@@ -1,1 +1,10 @@
-
+﻿{
+    "title": "ScriptDocs",
+    "introText": "Detailed instructions on launching Python scripts in Pydroid3, Visual Studio Code, command line, terminal and other environments. Simplify the complex and speed up your start in programming!",
+    "searchPlaceholder": "Search instructions...",
+    "langButton": "Language",
+    "filesSectionTitle": "Files on the Site",
+    "filterNew": "New",
+    "filterPopular": "Popular",
+    "filterPaid": "Paid"
+}
