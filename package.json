@@ -1,0 +1,17 @@
+{
+    "name": "torzex-web",
+    "version": "1.0.0",
+    "description": "Веб-приложение TORZEX",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "build": "npm run build"
+    },
+    "dependencies": {
+        "express": "^4.18.2"
+    },
+    "devDependencies": {},
+    "engines": {
+        "node": ">=22.14.0"
+    }
+}
