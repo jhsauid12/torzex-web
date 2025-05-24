@@ -1,0 +1,319 @@
+﻿/* === GLOBAL === */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom, #0f172a, #1e1b4b);
+    color: #e2e8f0;
+    position: relative;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+    /* === FOG BACKGROUND IMAGE + OVERLAY === */
+    body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 560px;
+        background: radial-gradient(ellipse at center, rgba(15, 23, 42, 0.6) 0%, rgba(15, 23, 42, 0.9) 100%), linear-gradient(to bottom, rgba(15, 23, 42, 0.85), rgba(30, 33, 58, 0.2), #0f172a), url('../assets/bg.jpg') no-repeat center / cover;
+        z-index: -2;
+        filter: brightness(0.5);
+        pointer-events: none;
+    }
+
+    body::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 560px;
+        background: radial-gradient(ellipse at center, transparent 0%, rgba(15, 23, 42, 0.6) 80%);
+        z-index: -1;
+        pointer-events: none;
+    }
+
+/* === CANVAS === */
+#fog-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 560px;
+    z-index: 0;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    opacity: 0.2;
+}
+
+/* === HEADER === */
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    gap: 20px;
+    flex-wrap: wrap;
+    backdrop-filter: blur(6px);
+    background: transparent;
+    position: relative;
+    z-index: 1;
+}
+
+/* === LOGO CIRCLE === */
+.logo-circle {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #1e293b, #334155);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 14px rgba(96, 165, 250, 0.3);
+    padding: 6px;
+    transition: transform 0.3s ease;
+}
+
+    .logo-circle:hover {
+        transform: scale(1.08);
+    }
+
+.logo img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+}
+
+/* === SEARCH BAR WITH ICON === */
+.search-container {
+    position: relative;
+    flex: 1;
+    max-width: 520px;
+    margin: 0 12px;
+}
+
+    .search-container input {
+        width: 100%;
+        font-size: 1.2rem;
+        padding: 12px 20px 12px 48px;
+        border-radius: 24px;
+        border: none;
+        background-color: rgba(100, 116, 139, 0.2);
+        color: #e2e8f0;
+        outline: none;
+        box-shadow: 0 0 12px rgba(30, 58, 138, 0.4);
+        backdrop-filter: blur(3px);
+        transition: 0.3s ease;
+    }
+
+        .search-container input:focus {
+            background-color: rgba(148, 163, 184, 0.15);
+            box-shadow: 0 0 16px rgba(96, 165, 250, 0.5);
+        }
+
+.search-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    pointer-events: none;
+}
+
+/* === BUTTONS === */
+button,
+.telegram-btn {
+    background: #1e3a8a;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 22px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.4s ease;
+    backdrop-filter: blur(2px);
+    box-shadow: 0 0 6px rgba(96, 165, 250, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+    button:hover,
+    .telegram-btn:hover {
+        background: #2563eb;
+    }
+
+.telegram-btn {
+    text-decoration: none;
+}
+
+    /* === ICON STYLES IN BUTTONS === */
+    .lang-btn i,
+    .telegram-btn i {
+        vertical-align: middle;
+    }
+
+/* === INTRO SECTION === */
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    padding: 30px;
+    background: rgba(30, 41, 59, 0.6);
+    border-radius: 24px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 20px 50px rgba(30, 58, 138, 0.25);
+    backdrop-filter: blur(12px);
+    transform: translateY(-10px);
+    transition: transform 0.5s ease;
+    position: relative;
+    z-index: 2;
+}
+
+    .intro:hover {
+        transform: translateY(-16px);
+    }
+
+    .intro h1 {
+        font-size: 2.7rem;
+        color: #93c5fd;
+        margin-bottom: 12px;
+    }
+
+    .intro p {
+        font-size: 1.15rem;
+        color: #cbd5e1;
+        text-align: center;
+        line-height: 1.5;
+    }
+
+/* === ФАЙЛЫ НА САЙТЕ === */
+.files-section {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 60px auto;
+    position: relative;
+    z-index: 2;
+}
+
+.files-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+    .files-header h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #60a5fa;
+    }
+
+/* Контейнер фильтров */
+.filters {
+    display: inline-flex;
+    gap: 10px;
+    border-radius: 24px;
+}
+
+    .filters .filter {
+        background: transparent;
+        border: none;
+        padding: 10px 20px;
+        color: #e2e8f0;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background 0.4s ease;
+    }
+
+        .filters .filter:hover,
+        .filters .filter.active {
+            background: rgba(96, 165, 250, 0.2);
+        }
+
+/* Сетка карточек с фиксированной шириной */
+.files-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 260px));
+    gap: 24px;
+    justify-content: center;
+}
+
+/* === СТИЛИ КАРТОЧКИ (реальная карточка) === */
+.file-card {
+    width: 260px;
+    height: 300px;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #1e1e1e;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+    .card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .card-image:hover img {
+        transform: scale(1.05);
+    }
+
+/* Наложенная метка (badge) */
+.badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    padding: 4px 8px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 4px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+    .badge.free {
+        background: #16a34a;
+    }
+
+    .badge.paid {
+        background: #ef4444;
+    }
+
+/* Оверлей в нижней части карточки (на изображении) */
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: #fff;
+}
+
+    .card-overlay h3 {
+        font-size: 1rem;
+        margin: 0 0 4px 0;
+    }
+
+    .card-overlay .file-info {
+        font-size: 0.85rem;
+        margin: 0;
+    }

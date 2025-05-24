@@ -1,1 +1,98 @@
+﻿/* Сброс */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    padding: 20px;
+}
+
+/* Хедер */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1e293b;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    header nav a {
+        color: #4ade80;
+        text-decoration: none;
+        font-size: 1.1rem;
+    }
+
+/* Основное содержимое */
+main {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#addCardBtn {
+    padding: 10px 15px;
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+/* Таблица */
+#cardsTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    #cardsTable th, #cardsTable td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    #cardsTable th {
+        background: #eee;
+    }
+
+/* Inline редактирование */
+.editable {
+    min-width: 100px;
+    outline: none;
+}
+
+select {
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Кнопки действий */
+.action-btn {
+    padding: 5px 8px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    .action-btn.save {
+        background: #16a34a;
+        color: #fff;
+    }
+
+    .action-btn.delete {
+        background: #ef4444;
+        color: #fff;
+    }
